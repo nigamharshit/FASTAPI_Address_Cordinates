@@ -1,0 +1,23 @@
+# Libraries which I installed and its command to install
+
+pip install SQLAlchemy
+pip install uvicorn
+pip install fastapi
+pip install geopy
+pip install pydantic
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+# Command to run the program
+uvicorn applications:app --reload
+
+# Swagger API
+URL - http://127.0.0.1:8000/docs
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Database used - SQLite3
+
+Database name - address.db
+
+Table name - address
