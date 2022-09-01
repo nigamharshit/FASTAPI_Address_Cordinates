@@ -92,8 +92,10 @@ def get_address_distance(db: Session, address: str, dist: int):
     # Extracting all data from database and calculate the distance between the original Location
     # and destination location. If its distance is less that the given distance then select it.
     details = db.query(model.Address).all()
-    output = dict()
-    i = 1
+    # output = dict()
+    # i = 1
+
+    output = list()
     for detail in details:
 
         # here we will extract the lattitude and longitude of input address
@@ -107,8 +109,19 @@ def get_address_distance(db: Session, address: str, dist: int):
         # print(distance)
 
         # check if distance is in range or not and store it in a dictionary
-        if distance <= dist:
-            output[i] = [getLoc2.address, getLoc2.latitude, getLoc2.longitude, distance]
-            i = i + 1
+        # if distance <= dist:
+        #     output[i] = [getLoc2.address, getLoc2.latitude, getLoc2.longitude, distance]
+            
+        #     i = i + 1
+
+        d = dict()
+        d['address'] = getLoc2.address
+        d['latitude'] = getLoc2.latitude
+        d['longitude'] = getLoc2.longitude
+        d['distance'] = distance
+
+        output.append(d)
+
+
 
     return output
