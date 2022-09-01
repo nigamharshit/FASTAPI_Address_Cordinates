@@ -114,13 +114,14 @@ def get_address_distance(db: Session, address: str, dist: int):
             
         #     i = i + 1
 
-        d = dict()
-        d['address'] = getLoc2.address
-        d['latitude'] = getLoc2.latitude
-        d['longitude'] = getLoc2.longitude
-        d['distance'] = distance
+        if distance <= dist:
+            d = dict()
+            d['address'] = getLoc2.address
+            d['latitude'] = getLoc2.latitude
+            d['longitude'] = getLoc2.longitude
+            d['distance'] = distance
 
-        output.append(d)
+            output.append(d)
 
 
 

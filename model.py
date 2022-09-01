@@ -7,7 +7,6 @@ from sre_parse import State
 from sqlalchemy import Column, Integer, String, Numeric
 from db_handler import Base
 
-# Here only one class used, so we don't use relationships between models
 
 class Address(Base):
     """
